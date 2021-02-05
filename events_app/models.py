@@ -2,7 +2,7 @@
 from events_app import db
 from sqlalchemy.orm import backref
 
-# TODO: Create a model called `Guest` with the following fields:
+# Create a model called `Guest` with the following fields:
 # - id: primary key
 # - name: String column
 # - email: String column
@@ -18,7 +18,7 @@ class Guest(db.Model):
     events_attending = db.relationship("Event", secondary="guest_event_table", back_populates="guests")
     
 
-# TODO: Create a model called `Event` with the following fields:
+# Create a model called `Event` with the following fields:
 # - id: primary key
 # - title: String column
 # - description: String column
@@ -36,7 +36,7 @@ class Event(db.Model):
     date_and_time = db.Column(db.DateTime, nullable = False)
     guests = db.relationship("Guest", secondary="guest_event_table", back_populates="events_attending")
 
-# TODO: Create a table `guest_event_table` with the following columns:
+# Create a table `guest_event_table` with the following columns:
 # - event_id: Integer column (foreign key)
 # - guest_id: Integer column (foreign key)
 
