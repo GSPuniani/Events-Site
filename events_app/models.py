@@ -34,6 +34,7 @@ class Event(db.Model):
     title = db.Column(db.String(100), nullable=False)
     description = db.Column(db.String(1000), nullable=False)
     date_and_time = db.Column(db.DateTime, nullable = False)
+    # event_type = db.Enum()
     guests = db.relationship("Guest", secondary="guest_event_table", back_populates="events_attending")
 
 # Create a table `guest_event_table` with the following columns:

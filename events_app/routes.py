@@ -26,7 +26,7 @@ def index():
 def event_detail(event_id):
     """Show a single event."""
     # Get the event with the given id and send to the template
-    single_event = Event.query.filter_by(event_id).one()
+    single_event = Event.query.filter_by(id=event_id).one()
     date_time_list = str(single_event.date_and_time).split(' ')
     date = date_time_list[0]
     time = date_time_list[1]
