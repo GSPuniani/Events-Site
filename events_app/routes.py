@@ -54,7 +54,7 @@ def rsvp(event_id):
         # Create a new guest with the given name, email, and phone, and 
         # add the event to their events_attending, then commit to the database
         new_guest = Guest(name=guest_name, email=guest_email, phone=guest_phone)
-        event.guests.append(new_guest)
+        new_guest.events_attending.append(event)
         db.session.add(new_guest)
         db.session.commit()
     
